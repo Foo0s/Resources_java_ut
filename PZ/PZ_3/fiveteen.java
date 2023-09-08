@@ -47,3 +47,4 @@ public class fiveteen {
         System.out.println(answer);
     }
 }
+
