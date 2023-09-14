@@ -5,10 +5,10 @@
 Write your code in this editor and press "Run" button to execute it.
 
 *******************************************************************************/
+package PZ.PZ_6;
 import java.util.Scanner;
 
-public class Main
-{
+public class pz6_3{
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите размер массива 2 числа: ");
