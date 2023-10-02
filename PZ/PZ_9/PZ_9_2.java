@@ -1,16 +1,17 @@
+package PZ.PZ_9;
 import java.util.Scanner;
 import java.util.LinkedHashMap;
 
 
 //Вывести имена сотрудников какой профессии больше всего, вывести кол-воБ профессию и их имена в том же порядке в котором вводились.
-public class Main
+public class PZ_9_2
 {
 	public static void main(String[] args) {
 	    Scanner sc = new Scanner(System.in);
 	    LinkedHashMap<String, String> hs = new LinkedHashMap<>();
 		System.out.println("Введите число: ");
 		int number = sc.nextInt(); sc.nextLine();
-		for(int i = number*2; i > 0; i--){
+		for(int i = number; i > 0; i--){
 		    System.out.println("Введите имя и профессию: ");
 		    String text = sc.nextLine();
 		    String[] list = new String[3];
@@ -32,11 +33,11 @@ public class Main
 		  }
 		}
 		System.out.println("\n");
-		System.out.println("Профессия которой больше всего: " + name_prof);
+		System.out.println("Профессия которой больше всего: " + name);
 		System.out.println("Количество сотрудников: " + size_2);
-		System.out.println("Имена сотрудников, профессия которых является " + name_prof + ": ");
+		System.out.println("Имена сотрудников, профессия которых является " + name + ": ");
 		for(String ww: hs.keySet()){
-		    if (name_prof.toLowerCase().equals((hs.get(ww).toLowerCase()))){
+		    if (name.toLowerCase().equals((hs.get(ww).toLowerCase()))){
 		        System.out.print(ww + " ");
 		    }
 		}

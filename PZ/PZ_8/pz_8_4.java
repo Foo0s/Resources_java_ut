@@ -1,7 +1,8 @@
+package PZ.PZ_8;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Main
+public class pz_8_4
 {
 	public static void main(String[] args) {
 	    Scanner sc = new Scanner(System.in);
