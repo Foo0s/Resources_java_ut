@@ -9,6 +9,7 @@ class Main{
         int y1 = sc.nextInt(); sc.nextLine();
         System.out.println("Введите координаты другой фигуры: ");
         int x2 = sc.nextInt(); int y2 = sc.nextInt();
+        System.out.println("Работа функции: ");
         System.out.println(king_step(x1, y1, x2, y2));
     }
     
@@ -22,6 +23,6 @@ class Main{
         }
         if (x1 > 8 || y1 > 8) return "1";
         if (x2 > 8 || y2 > 8) return "2";
-        return "0";
+        return "Complited";
     }
 }
