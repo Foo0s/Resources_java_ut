@@ -1,41 +1,43 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 
-class Main {
+public class Main {
+    static int count_i = 0;
+    static int line = 0;
+
     public static void main(String[] args) {
-        Scanner sc =  new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Количество строк: ");
-        int numb_lines = sc.nextInt(); sc.nextLine();
-        ArrayList<Integer[]> n_list = new ArrayList(){};
-        for(int i = 0; i < numb_lines; i++){
-            System.out.println("Вводите строку чисел через пробел: ");
-            String line_numb = sc.nextLine();
-            String[] line = line_numb.split(" ");
-            Integer[] n_lss = new Integer[line.length];
-            for(int s = 0; s < line.length; s++){
-                n_lss[s] = (Integer.valueOf(line[s]));
+        int number_line = sc.nextInt(); sc.nextLine();
+        ArrayList<Integer[]> list = new ArrayList<>();
+        for (int i = 0; i < number_line; i++) {
+            String line = sc.nextLine();
+            String[] m_l = line.split(" ");
+            Integer[] res = new Integer[m_l.length];
+            for (int j = 0; j < m_l.length; j++) {
+                res[j] = Integer.parseInt(m_l[j]);
             }
-            n_list.add(n_lss);
+            list.add(res);
         }
-        int d = 0;
-        System.out.println(func_max_numb_for_line(n_list, d, n_list.size()));
+        System.out.println(find_line7(list));
     }
-    
-    static int func_max_numb_for_line(ArrayList<Integer[]> lst, int numb, int size_lst) {
-        int numb_line = 0; int size_of_number_line = 0; int indx = 0;
-        for(Integer[] massive: lst){
-            int numbs = 0;
-            for(int j = 0; j < massive.length; j++) {
-                numbs += massive[j];
-            }
-            if (numbs >= size_lst && numbs % 7 == 0) {
-                size_lst = numbs;
-                numb = indx;
-            }
-            indx++;
+
+    static int find_line7(ArrayList<Integer[]> lst) {
+        int result = 0; int cc = 0;
+        for(Integer[] s: lst){
+            count_line(s);
+            if (count_i >= result & count_i % 7 == 0) {result = count_i; line = cc;}
+            cc++;
+            count_i = 0;
         }
-        return numb;
+        return line;
+    }
+
+    static int count_line(Integer[] line) {
+        for (int i = 0; i < line.length; i++) {
+            count_i += line[i];
+        }
+        return count_i;
     }
 }
