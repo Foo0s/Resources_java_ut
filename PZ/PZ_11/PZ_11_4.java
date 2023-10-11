@@ -1,7 +1,8 @@
+package PZ.PZ_11;
 import java.util.Scanner;
 
 
-class Main{
+public class PZ_11_4{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите координаты короля: ");

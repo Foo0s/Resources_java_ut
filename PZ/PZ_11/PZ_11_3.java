@@ -1,8 +1,9 @@
+package PZ.PZ_11;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class PZ_11_3 {
     static int count_i = 0;
     static int line = 0;
 

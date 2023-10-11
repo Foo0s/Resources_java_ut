@@ -1,7 +1,8 @@
+package PZ.PZ_11;
 import java.util.Scanner;
 import java.util.HashMap;
 
-public class Main{
+public class PZ_11_2{
 
     static int numb = 0;
     public static void main(String[] args){
