@@ -16,7 +16,12 @@ class Pen extends WritingMaterials{
 
     Pen(int price, double length, boolean draw) {
         super(price, length, draw);
-        name = name; color = color; this.price = price; this.length = length; this.draw = draw;
+        setColor(color);
+        setDraw(draw);
+        setName(name);
+        setLength(length);
+        setPrice(price);
+        setDescription(description);
     }
 
 }

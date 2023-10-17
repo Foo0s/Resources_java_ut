@@ -4,7 +4,7 @@ final class Rules extends WritingMaterials{
     static String color;
     int price;
     double length;
-    boolean draw;
+    boolean draw = false;
     final static String description = "Объект - Линейка.";
 
 
@@ -15,7 +15,12 @@ final class Rules extends WritingMaterials{
 
     Rules(int price, double length, boolean draw) {
         super(price, length, draw);
-        name = name; color = color; this.price = price; this.length = length; this.draw = draw;
+        setColor(color);
+        setDraw(draw);
+        setName(name);
+        setLength(length);
+        setPrice(price);
+        setDescription(description);
     }
 
 }

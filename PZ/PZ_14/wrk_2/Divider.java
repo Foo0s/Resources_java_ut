@@ -4,7 +4,7 @@ class Divider extends WritingMaterials{
     static String color;
     int price;
     double length;
-    boolean draw;
+    boolean draw = true;
 
     final static String description = "Объект - циркуль.";
 
@@ -15,7 +15,12 @@ class Divider extends WritingMaterials{
 
     Divider(int price, double length, boolean draw) {
         super(price, length, draw);
-        name = name; color = color; this.price = price; this.length = length; this.draw = draw;
+        setColor(color);
+        setDraw(draw);
+        setName(name);
+        setLength(length);
+        setPrice(price);
+        setDescription(description);
     }
 
     final void drawCircle() {

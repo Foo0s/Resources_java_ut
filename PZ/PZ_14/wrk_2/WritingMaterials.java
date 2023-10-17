@@ -9,7 +9,7 @@ class WritingMaterials {
 
     static int id;
 
-    final private static String description = "Описание объекта.";
+    static String description = "Описание объекта.";
 
     static{
         name = "None";
@@ -32,5 +32,51 @@ class WritingMaterials {
 
     void display() {
         System.out.println("Имя: " + name + " .Цвет: " + color + " .Цена: " + this.price + " .Длина: " + this.length + " .Рисует: " + ((this.draw == true)? "Да": "Нет"));
+    }
+
+    //Инкапсуляция.
+
+    String getName() {
+        return this.name;
+    }
+
+    void setName(String names) {
+        this.name = names;
+    }
+
+    String getColor() {
+        return this.color;
+    }
+
+    void setColor(String colors) {
+        this.color = colors;
+    }
+
+    int getPrice() {
+        return this.price;
+    }
+
+    void setPrice(int prices) {
+        this.price = prices;
+    }
+
+    double getLength() {
+        return this.length;
+    }
+
+    void setLength(double lengths) {
+        this.length = lengths;
+    }
+
+    boolean isDraw() {
+        return this.draw;
+    }
+
+    void setDraw(boolean draws) {
+        this.draw = draws;
+    }
+
+    void setDescription(String text) {
+        this.description = text;
     }
 }
