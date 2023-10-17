@@ -1,13 +1,8 @@
-/******************************************************************************
+package PZ.PZ_13;
 
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
-
-*******************************************************************************/
 import java.util.Scanner;
 
-public class Main
+public class PZ_13_2
 {
 	public static void main(String[] args) {
 		WritingMaterials pen = new WritingMaterials("ручка", "оранжевый", 14, 9.2, true);
