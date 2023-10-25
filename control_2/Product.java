@@ -10,6 +10,7 @@ public class Product extends Tovar implements Info_Products {
     int month_g;
     int day;
     String description;
+    int price;
 
     int count_product;
 
@@ -21,7 +22,7 @@ public class Product extends Tovar implements Info_Products {
 
     //Конструктор//
 
-    Product(String name_product, int year_g, int month_g, int day, String description, String name_tovar, String city, String street, int qcode) {
+    Product(String name_product, int year_g, int month_g, int day, String description, String name_tovar, String city, String street, int qcode, int price) {
         super(name_tovar, city, street, qcode);
 
 
@@ -35,15 +36,16 @@ public class Product extends Tovar implements Info_Products {
         this.city = city;
         this.street = street;
         this.qcode = qcode;
+        this.price = price;
 
     }
 
-    Product(String name_product, String name_tovar, String city, String street, int qcode) {
+    Product(String name_product, String name_tovar, String city, String street, int qcode, int price) {
         super(name_tovar, city, street, qcode);
 
 
         this.name_product = name_product;
-
+        this.price = price;
         this.name_tovar = name_tovar;
         this.city = city;
         this.street = street;
@@ -97,6 +99,14 @@ public class Product extends Tovar implements Info_Products {
         this.city = City;
     }
 
+    int getPrice() {
+        return this.price;
+    }
+
+    void setPrice(int price) {
+        this.price = price;
+    }
+
     String getCity() {return this.city;}
 
     void setStreet(String street) {
@@ -120,6 +130,7 @@ public class Product extends Tovar implements Info_Products {
         System.out.println("Пригодность (месяц): " + this.month_g);
         System.out.println("Пригодность (день): " + this.day);
         System.out.println("Описание: " + this.description);
+        System.out.println("Цена товара: " + this.price);
     }
 
     //Переопределение методов//
