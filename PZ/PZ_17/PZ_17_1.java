@@ -9,6 +9,7 @@ public class Main{
         System.out.println("Введите арифмитическое выражение (PS: + - * /): ");
         String arifm = sc.nextLine();
         String arifm_operators = "+-/*";
+        boolean flag = true;
 
         String[] array_oper = arifm.split(" ");
         try{
@@ -17,7 +18,7 @@ public class Main{
             String arifm_operator = array_oper[1];
 
             if (arifm_operators.contains(arifm_operator) == false) {
-                throw new NullPointerException("Operation Error!");
+                throw new Exception();
             }
             else{
                 switch (arifm_operator){
@@ -30,8 +31,21 @@ public class Main{
         }
         catch (NumberFormatException  ex) {
             System.out.println("Error! Not number");
+            flag = false;
         } catch (ArithmeticException e) {
             System.out.println("Error!Division by Zero");
+            flag = false;
+        } catch (Exception e) {
+            System.out.println("Operation Error!");
+            flag = false;
+        }
+        finally{
+            if (flag == true) {
+                System.out.println("Вычисление произошло успешно");
+            }
+            else {
+                System.out.println("Вычисление не произошло");
+            }
         }
     }
 }
