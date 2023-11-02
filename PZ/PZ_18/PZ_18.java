@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -5,7 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 class Main{
-    public static void main(String[] argc) {
+    public static void main(String[] argc) throws IOException {
         /*
             Практическая работа №18.
             Чтение и запись данных в файл.
@@ -14,6 +16,7 @@ class Main{
         Scanner sc = new Scanner(System.in);
         String[] string_arg = sc.nextLine().split(" ");
         ArrayList<String> symbol_to_operations = new ArrayList<>(Arrays.asList("+", "-", "*", "/"));
+        String finally_answer = null;
         try{
             int number_operation_1 = Integer.parseInt(string_arg[0]);
             int number_operation_2 = Integer.parseInt(string_arg[2]);
@@ -40,7 +43,7 @@ class Main{
             int choice = sc.nextInt();
             try{
                 if (choice == 1) {
-                        FileReader fl_read = new FileReader("info.txt");
+                        FileReader fl_read = new FileReader("input.txt");
                         char[] str = new char[256];
                         int symbol;
                         while((symbol = fl_read.read(str)) > 0) {
@@ -53,12 +56,8 @@ class Main{
                         System.out.println("Файл был закрыт.");
                     }
                     else if (choice == 2) {
-                        FileWriter fl_write = new FileWriter("output.txt");
-                        fl_write.write("Result: " + result);
-                        fl_write.write("\n");
-                        fl_write.write(String.join(" ", string_arg));
-                        fl_write.close();
-                        System.out.println("Файл был закрыт");
+                        String text = "Result: " + result + "\n" + number_operation_1 + symbol_operation + number_operation_2;
+                        WritetoFile(text);
                     }
                     else {
                         throw new Error();
@@ -67,17 +66,40 @@ class Main{
             catch (Error e) {System.out.println("Ошибка такой опции нет");}
         }
         catch (ArithmeticException ex) {
+
+            finally_answer = "Error! Division by Zero";
             System.out.println("Error! Division by Zero");
         }
         catch (NumberFormatException ex) {
+            finally_answer = "Error! Not number";
             System.out.println("Error! Not number");
         }
         catch (Exception e){
+            finally_answer = "Operation Error!";
             System.out.println("Operation Error!");
         }
         catch (Error er) {
-            System.out.println("Ошибка в выражении больше операций.");
+            finally_answer = "Ошибка в выражении большое количество операций.";
+            System.out.println("Ошибка в выражении большое количество операций.");
         }
+        finally {
+            try {
+                if (finally_answer.length() > 0) {
+                    WritetoFile(finally_answer);
+                    System.out.println("Запись ошибки");
+                }
+                System.out.println("Работа программы окончена");
+            }
+            catch (NullPointerException e) {
+                System.out.println("Ошибок нет");
+            }
+        }
+    }
 
+    public static void WritetoFile(String text) throws IOException {
+        FileWriter fl_wr = new FileWriter("output.txt");
+        fl_wr.write(text);
+        fl_wr.close();
+        System.out.println("Файл был закрыт");
     }
 }
