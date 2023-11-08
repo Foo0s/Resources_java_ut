@@ -1,3 +1,4 @@
+package control_2;
 public abstract class Tovar {
 
     String name_tovar;

@@ -1,3 +1,4 @@
+package control_2;
 public abstract class building {
 
     final String name;

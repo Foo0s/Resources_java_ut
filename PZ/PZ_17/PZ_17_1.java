@@ -1,8 +1,9 @@
+package PZ.PZ_17;
 import javax.lang.model.type.ErrorType;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Main{
+public class PZ_17_1{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

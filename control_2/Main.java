@@ -1,3 +1,4 @@
+package control_2;
 public class Main {
     public static void main(String[] args) {
         Shop new_shop = new Shop("Берёзка", 10, "магазин", "Петропавловская 34", "Ростов-на-Дону", 50);
@@ -26,7 +27,7 @@ public class Main {
 
         System.out.println("\n\n\n");
 
-        Product new_product = new Product("Еда", "Сгущёнка", "Ростов-на-Дону", "улица Ларина 23", 23099443);
+        Product new_product = new Product("Еда", "Сгущёнка", "Ростов-на-Дону", "улица Ларина 23", 23099443, 2344);
         new_product.display();
         new_product.qcode();
         new_product.setDay(26);

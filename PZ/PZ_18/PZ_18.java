@@ -1,3 +1,4 @@
+package PZ.PZ_18;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
@@ -6,7 +7,7 @@ import java.util.ArrayList;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-class Main{
+class PZ_18{
     public static void main(String[] argc) throws IOException {
         /*
             Практическая работа №18.
